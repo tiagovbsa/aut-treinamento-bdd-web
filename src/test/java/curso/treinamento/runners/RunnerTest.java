@@ -8,10 +8,10 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = {"src\\test\\resources\\features\\login.feature"},
+		features = {"src\\test\\resources\\features"},
 		glue = {"curso.treinamento.steps"},
 		snippets = SnippetType.CAMELCASE,
-		tags = {})
+		tags = {"@Sprint1"})
 
 public class RunnerTest {
 	

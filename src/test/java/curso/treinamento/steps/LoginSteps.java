@@ -1,5 +1,7 @@
 package curso.treinamento.steps;
 
+import javax.swing.JOptionPane;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -12,7 +14,7 @@ import cucumber.api.java.pt.Quando;
 public class LoginSteps {
 
 	@Dado("^que eu esteja na tela de login$")
-	public void queEuEstejaNaTelaDeLogin() {
+	public void queEuEstejaNaTelaDeLogin() throws InterruptedException {
 		
 		//Setando o local onde está o driver do Google Chrome 
 		System.setProperty("webdriver.chrome.driver", "src\\test\\resources\\drivers\\chromedriver.exe");
@@ -28,10 +30,14 @@ public class LoginSteps {
 		driver.findElement(By.name("userName")).sendKeys("mercury");
 		driver.findElement(By.name("password")).sendKeys("mercury");
 		driver.findElement(By.name("login")).click();
+		Thread.sleep(10000);	
+		JOptionPane.showMessageDialog(null, "Seu tempo acabou", "Sessão Expirada, Clique em OK para encerrar a página", 0);
 		driver.quit();
 		
 	//	WebDriverWait wait = new WebDriverWait(driver, 20);
 		
+		
+			
 		
 		
 	}
